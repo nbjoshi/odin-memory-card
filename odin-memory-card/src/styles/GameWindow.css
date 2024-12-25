@@ -15,3 +15,26 @@
 
   --grey: #c7c8cc;
 }
+
+.loading-all {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+  max-width: 80%;
+}
+
+.loading-all img {
+  margin-bottom: 0.7rem;
+}
+
+.loading-all p {
+  padding: 0.5rem 1rem;
+  background: var(--blue-4);
+  color: white;
+  border: 0.25rem solid var(--blue-2);
+  border-radius: 0.8rem;
+  box-shadow: 0.5rem 0.5rem var(--blue-4);
+}
