@@ -47,7 +47,7 @@ export default function Card({
   return (
     <>
       <div data-id={id} className="card" onClick={handleClick}>
-        <div key={Date.now()} className="card-front">
+        <div key={id} className="card-front">
           <img
             data-id={id}
             onLoad={handleLoad}
