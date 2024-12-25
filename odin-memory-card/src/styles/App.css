@@ -1,0 +1,78 @@
+@font-face {
+  font-family: "Fortnite";
+  src: url("../assets/Fortnite.ttf");
+}
+
+:root {
+  --beige: #ffead2;
+  --beige-2: #ffe4c9;
+  --beige-3: #f3ebdf;
+
+  --blue-1: #dbdfea;
+  --blue-2: #acb1d6;
+  --blue-3: #8294c4;
+  --blue-4: #265073;
+
+  --grey: #c7c8cc;
+}
+
+#root {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  width: 70%;
+  max-width: 1228px;
+  margin: 1.5rem 1.3rem;
+  border: 0.5rem solid var(--blue-3);
+  box-shadow: 0.8rem 0.8rem var(--blue-4);
+  font-family: "Fortnite", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: 1.5s oscillate infinite alternate;
+  color: var(--blue-4);
+  padding: 1.8rem;
+  border-radius: 1.5rem 2.5rem;
+  background-color: var(--beige-3);
+}
+
+.header h1 {
+  font-style: italic;
+  font-size: 3.5rem;
+  text-align: center;
+  text-shadow: 2px 2px 0px var(--blue-2), 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.header:hover {
+  background-color: var(--blue-3);
+  transform: translateY(-0.5rem);
+  transition: background-color 200ms ease-in-out, transform 200ms ease-in-out;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0.5rem;
+  width: 100%;
+}
+
+button,
+img {
+  cursor: url("../assets/cursor.cur"), auto;
+}
+
+@keyframes oscillate {
+  from {
+    tranform: translateY(-3px);
+  }
+  to {
+    transform: translateY(3px);
+  }
+}

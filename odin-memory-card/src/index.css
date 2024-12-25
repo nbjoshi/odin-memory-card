@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "Fortnite";
+  src: url("../assets/Fortnite.ttf");
+}
+
+:root {
+  --beige: #ffead2;
+  --beige-2: #ffe4c9;
+  --beige-3: #f3ebdf;
+
+  --blue-1: #dbdfea;
+  --blue-2: #acb1d6;
+  --blue-3: #8294c4;
+  --blue-4: #265073;
+
+  --grey: #c7c8cc;
+
+  font-family: "Fortnite", sans-serif;
+  line-height: 1.5;
+  font-size: 16px;
+
+  background: url("https://cdnb.artstation.com/p/assets/images/images/011/847/671/large/paul-mader-winter.jpg?1531749995")
+    no-repeat center center;
+  background-size: cover;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  cursor: url("./assets/cursor.cur"), auto;
+}
+
+@media (max-width: 600px) {
+  :root {
+    font-size: 13px;
+  }
+
+  .header {
+    padding: 0.5rem;
+  }
+}

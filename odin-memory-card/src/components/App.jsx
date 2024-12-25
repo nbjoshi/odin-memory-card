@@ -1,0 +1,68 @@
+import "../styles/App.css";
+import { useState } from "react";
+import Menu from "./Menu";
+import GameWindow from "./GameWindow";
+import Result from "./Result";
+import { SnowOverlay } from "react-snow-overlay";
+
+export default function App() {
+  const [difficulty, setDifficulty] = useState("");
+  const [gameOver, setGameOver] = useState(false);
+  const [highScore, setHighScore] = useState(0);
+  const [endScore, setEndScore] = useState(0);
+  const [result, setResult] = useState("");
+
+  if (endScore > highScore) {
+    setHighScore(endScore);
+  }
+
+  function handleMenuButton() {
+    setDifficulty("");
+    setGameOver(false);
+    setEndScore(0);
+    setResult("");
+  }
+
+  function handleRestartGame() {
+    setGameOver(false);
+    setDifficulty(difficulty);
+    setEndScore(0);
+    setResult("");
+  }
+
+  return (
+    <>
+      <SnowOverlay />
+      <div className="header">
+        <h1>Fortnite Memory Game</h1>
+        <p>High Score: {highScore}</p>
+      </div>
+      <div className="container">
+        {difficulty == "" ? (
+          <Menu difficulty={difficulty} setDifficulty={setDifficulty} />
+        ) : (
+          <>
+            {gameOver ? (
+              <Result
+                result={result}
+                handleMenuButton={handleMenuButton}
+                handleRestartGame={handleRestartGame}
+                endScore={endScore}
+              />
+            ) : (
+              <GameWindow
+                difficulty={difficulty}
+                gameOver={gameOver}
+                setIsGameOver={setGameOver}
+                highScore={highScore}
+                setHighScore={setHighScore}
+                setEndScore={setEndScore}
+                setResult={setResult}
+              />
+            )}
+          </>
+        )}
+      </div>
+    </>
+  );
+}

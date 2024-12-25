@@ -1,0 +1,83 @@
+@font-face {
+  font-family: "Fortnite";
+  src: url("../assets/Fortnite.ttf");
+}
+
+:root {
+  --beige: #ffead2;
+  --beige-2: #ffe4c9;
+  --beige-3: #f3ebdf;
+
+  --blue-1: #dbdfea;
+  --blue-2: #acb1d6;
+  --blue-3: #8294c4;
+  --blue-4: #265073;
+
+  --grey: #c7c8cc;
+}
+
+.game-menu {
+  color: var(--blue-4);
+  box-shadow: 0.5rem 0.5rem var(--blue-4);
+  border: 0.3rem solid var(--blue-1);
+  border-radius: 1rem;
+  background-color: var(--blue-2);
+  padding: 1.9rem 2.5rem;
+  max-width: 90%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Fortnite", sans-serif;
+}
+
+.menu-header {
+  margin-bottom: 1.8rem;
+  background-color: var(--blue-1);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem 1rem;
+  box-shadow: 0.5rem 0.5rem var(--blue-4);
+  text-shadow: 1px 1px 0px var(--blue-2), 3px 3px 0px rgba(0, 0, 0, 0.25);
+}
+
+.menu-content {
+  width: 100%;
+  margin-bottom: 2rem;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-content button {
+  color: var(--blue-4);
+  width: 70%;
+  padding: 0.8rem 1rem;
+  border-radius: 0.5rem 1rem;
+  border: 0;
+  font-family: "Fortnite", sans-serif;
+}
+
+.menu-content button:hover::before {
+  content: "> ";
+}
+
+.menu-content button:hover {
+  transform: translateX(0.5rem);
+  background-color: var(--blue-4);
+  transition: 150ms ease-in-out;
+}
+
+.menu-content button:first-child:hover {
+  color: #ace1af;
+}
+
+.menu-content button:nth-child(2):hover {
+  color: #f0e68c;
+}
+
+.menu-content button:last-child:hover {
+  color: #fd5c63;
+}
