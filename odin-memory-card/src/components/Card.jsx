@@ -30,7 +30,7 @@ export default function Card({
       if (nextRenderScore === maxScore) {
         setEndScore(maxScore);
         setIsGameOver(true);
-        setResult("You Win!");
+        setResult("win");
       }
     }
   }

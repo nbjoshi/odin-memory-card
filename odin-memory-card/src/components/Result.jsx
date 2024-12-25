@@ -10,7 +10,7 @@ export default function Result({
 }) {
   return (
     <div className="results">
-      {result == "victory" ? (
+      {result == "win" ? (
         <>
           <p>You Won!</p>
           <p>Score: {endScore}</p>

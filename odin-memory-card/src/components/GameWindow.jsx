@@ -21,14 +21,14 @@ export default function GameWindow({
   const [skins, setSkins] = useState([]);
 
   useEffect(() => {
+    let ignore = false;
+
     async function startFetch() {
-      setSkins([]);
       const data = await getSkins(numberOfSkins);
       if (!ignore) {
         setSkins(data);
       }
     }
-    let ignore = false;
     startFetch();
     return () => {
       ignore = true;

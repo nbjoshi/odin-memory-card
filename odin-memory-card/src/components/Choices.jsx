@@ -2,7 +2,7 @@ import "../styles/Choices.css";
 import { useState } from "react";
 import Card from "./Card";
 
-export default function DisplayChoices({
+export default function Choices({
   copyData,
   setIsGameOver,
   numberOfSkins,
@@ -78,8 +78,9 @@ export default function DisplayChoices({
   options[rand] = temp;
 
   const SkinsJSX = options
-    .filter((skin) => skin && skin.id && skin.url)
-    .map((skin) => (
+    // Filter out skins with no/undefined id
+    .filter((skin) => skin && skin.id)
+    .map((skin, index) => (
       <Card
         key={skin.id}
         id={skin.id}
