@@ -35,7 +35,7 @@ export default function Menu({ setDifficulty }) {
           </button>
         </div>
         <div>
-          Instructions:<br></br>Don't pick the same skin twice!
+          Rules:<br></br>Don't pick the same skin twice!
         </div>
       </div>
     </>

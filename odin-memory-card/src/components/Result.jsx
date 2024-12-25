@@ -18,7 +18,7 @@ export default function Result({
         </>
       ) : (
         <>
-          <p>Game over!Better luck next time. </p>
+          <p>Game over! Better luck next time. </p>
           <p>Score: {endScore}</p>
           <img className="meme" src={lose} alt="lose_gif"></img>
         </>

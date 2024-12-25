@@ -77,8 +77,9 @@ export default function DisplayChoices({
   options[0] = options[rand];
   options[rand] = temp;
 
-  const SkinsJSX = options.map((skin) => (
-    <>
+  const SkinsJSX = options
+    .filter((skin) => skin && skin.id && skin.url)
+    .map((skin) => (
       <Card
         key={skin.id}
         id={skin.id}
@@ -93,8 +94,8 @@ export default function DisplayChoices({
         maxScore={maxScore}
         setResult={setResult}
       />
-    </>
-  ));
+    ));
+
   return (
     <div className="game-container">
       <div className="card-container">{SkinsJSX}</div>

@@ -34,7 +34,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  animation: 1.5s oscillate infinite alternate;
+  animation: 1.5s oscillate2 infinite alternate;
   color: var(--blue-4);
   padding: 1.8rem;
   border-radius: 1.5rem 2.5rem;
@@ -51,7 +51,7 @@
 .header:hover {
   background-color: var(--blue-3);
   transform: translateY(-0.5rem);
-  transition: background-color 200ms ease-in-out, transform 200ms ease-in-out;
+  transition: 200ms ease-in-out;
 }
 
 .content {
@@ -68,9 +68,9 @@ img {
   cursor: url("../assets/cursor.cur"), auto;
 }
 
-@keyframes oscillate {
+@keyframes oscillate2 {
   from {
-    tranform: translateY(-3px);
+    transform: translateY(-3px);
   }
   to {
     transform: translateY(3px);

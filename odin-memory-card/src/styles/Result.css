@@ -15,3 +15,76 @@
 
   --grey: #c7c8cc;
 }
+
+.results {
+  color: var(--blue-4);
+  flex-wrap: wrap;
+  border: 0.5rem solid var(--blue-2);
+  box-shadow: calc(0.5rem * 1.5) calc(0.5rem * 1.5) var(--blue-4);
+  background-color: var(--beige-3);
+  padding: 2rem;
+  border-radius: 2rem;
+  gap: 10px;
+  max-width: 80%;
+  text-align: center;
+}
+
+.results p:first-child {
+  background-color: var(--blue-3);
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  border: 0.5rem solid var(--blue-2);
+  box-shadow: calc(0.5rem * 1.5) calc(0.5rem * 1.5) var(--blue-4);
+  animation: 1.5s oscillate infinite alternate;
+}
+
+.results p:nth-child(2) {
+  animation: 1.5s oscillate infinite alternate;
+  font-size: 1.3rem;
+  margin: 1rem 1.3rem;
+}
+
+.meme {
+  border: 3px solid var(--blue-2);
+  margin-bottom: 1rem;
+  max-width: 70%;
+  border-radius: 2rem;
+  box-shadow: 0.5rem 0.5rem var(--blue-4);
+}
+
+.menu-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.menu-options button {
+  color: var(--blue-4);
+  width: 70%;
+  padding: 0.8rem 1rem;
+  border-radius: 0.5rem 1rem;
+  font-family: "Fortnite", sans-serif;
+  border: 0.2rem solid var(--blue-2);
+  box-shadow: 0.3rem 0.3rem var(--blue-4);
+}
+
+.menu-options button:hover {
+  transform: translateY(-0.2rem);
+  background-color: var(--blue-4);
+  color: var(--beige);
+  transition: 200ms ease-in-out;
+}
+
+@keyframes oscillate {
+  from {
+    transform: translateY(-5px);
+  }
+  to {
+    transform: translateY(5px);
+  }
+}

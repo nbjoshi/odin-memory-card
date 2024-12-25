@@ -37,7 +37,7 @@ export default function App() {
         <h1>Fortnite Memory Game</h1>
         <p>High Score: {highScore}</p>
       </div>
-      <div className="container">
+      <div className="content">
         {difficulty == "" ? (
           <Menu difficulty={difficulty} setDifficulty={setDifficulty} />
         ) : (
