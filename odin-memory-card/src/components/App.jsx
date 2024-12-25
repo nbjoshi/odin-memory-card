@@ -32,7 +32,7 @@ export default function App() {
 
   return (
     <>
-      <SnowOverlay />
+      <SnowOverlay /> {/* Snow Effect I saw on TikTok */}
       <div className="header">
         <h1>Fortnite Memory Game</h1>
         <p>High Score: {highScore}</p>
