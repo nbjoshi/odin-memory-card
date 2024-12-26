@@ -12,3 +12,5 @@
   <li>JavaScript</li>
   <li>CSS</li>
 </ul>
+
+<p>API Used: https://fortnite-api.com/</p>
