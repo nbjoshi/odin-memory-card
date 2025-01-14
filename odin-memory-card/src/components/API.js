@@ -9,18 +9,27 @@ export default async function getSkins(numberOfSkins) {
     if (!data || !data.data) {
       throw new Error("Unexpected API response format");
     }
-    const outfits = data.data.filter((item) => item.type.value === "outfit");
-    const skins = outfits.map((item) => ({
-      id: item.id,
-      name: item.name,
-      url: item.images.icon,
-      picked: false,
-    }));
-    const shuffled = skins.sort(() => Math.random() - 0.5);
+    const skins = data.data
+      .filter(({ type }) => type?.value === "outfit")
+      .map(({ id, name, images }) => ({
+        id,
+        name,
+        url: images.icon,
+        picked: false,
+      }));
+    const shuffled = shuffle(skins);
     const selectedSkins = shuffled.slice(0, numberOfSkins);
     return selectedSkins;
   } catch (error) {
     console.error("Error fetching data:", error);
     return [];
   }
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
 }

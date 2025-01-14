@@ -1,5 +1,5 @@
 import "../styles/Choices.css";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Card from "./Card";
 
 export default function Choices({
@@ -77,25 +77,34 @@ export default function Choices({
   options[0] = options[rand];
   options[rand] = temp;
 
-  const SkinsJSX = options
-    // Filter out skins with no/undefined id
-    .filter((skin) => skin && skin.id)
-    .map((skin, index) => (
-      <Card
-        key={skin.id}
-        id={skin.id}
-        url={skin.url}
-        onErrorReplace={replaceSkin}
-        chosenIds={chosenIds}
-        setChosenIds={setChosenIds}
-        score={score}
-        setScore={setScore}
-        setIsGameOver={setIsGameOver}
-        setEndScore={setEndScore}
-        maxScore={maxScore}
-        setResult={setResult}
-      />
-    ));
+  const SkinsJSX = useMemo(() => {
+    return options
+      .filter((skin) => skin && skin.id)
+      .map((skin, index) => (
+        <Card
+          key={skin.id}
+          id={skin.id}
+          url={skin.url}
+          onErrorReplace={replaceSkin}
+          chosenIds={chosenIds}
+          setChosenIds={setChosenIds}
+          score={score}
+          setScore={setScore}
+          setIsGameOver={setIsGameOver}
+          setEndScore={setEndScore}
+          maxScore={maxScore}
+          setResult={setResult}
+        />
+      ));
+  }, [
+    skins,
+    chosenIds,
+    score,
+    maxScore,
+    setIsGameOver,
+    setEndScore,
+    setResult,
+  ]);
 
   return (
     <div className="game-container">

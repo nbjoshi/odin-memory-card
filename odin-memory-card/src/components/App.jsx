@@ -1,5 +1,5 @@
 import "../styles/App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Menu from "./Menu";
 import GameWindow from "./GameWindow";
 import Result from "./Result";
@@ -12,9 +12,11 @@ export default function App() {
   const [endScore, setEndScore] = useState(0);
   const [result, setResult] = useState("");
 
-  if (endScore > highScore) {
-    setHighScore(endScore);
-  }
+  useEffect(() => {
+    if (endScore > highScore) {
+      setHighScore(endScore);
+    }
+  }, [endScore, highScore]);
 
   function handleMenuButton() {
     setDifficulty("");

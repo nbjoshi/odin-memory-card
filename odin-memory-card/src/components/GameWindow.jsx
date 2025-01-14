@@ -10,14 +10,8 @@ export default function GameWindow({
   setEndScore,
   setResult,
 }) {
-  let numberOfSkins;
-  if (difficulty === "easy") {
-    numberOfSkins = 5;
-  } else if (difficulty === "medium") {
-    numberOfSkins = 10;
-  } else {
-    numberOfSkins = 15;
-  }
+  const difficultyMap = { easy: 5, medium: 10, hard: 15 };
+  const numberOfSkins = difficultyMap[difficulty];
   const [skins, setSkins] = useState([]);
 
   useEffect(() => {
