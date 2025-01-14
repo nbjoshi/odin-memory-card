@@ -4,7 +4,9 @@
 <p>Don't click on the same card twice!</p>
 
 <h2>🎬 Demo</h2>
-<p>Coming soon...</p>
+<img src="../odin-memory-card/odin-memory-card/src/assets/MenuDemo.png"/>
+<img src="../odin-memory-card/odin-memory-card/src/assets/GameDemo.png"/>
+<img src="../odin-memory-card/odin-memory-card/src/assets/WinDemo.png"/>
 
 <h2>💭 Technologies</h2>
 <ul>
